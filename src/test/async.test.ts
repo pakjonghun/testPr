@@ -27,5 +27,12 @@ it("비동기 다른방법 done 을 호출함, 느리고 코드도 길어짐", (
 });
 
 it("resolve 사용", () => {
-  expect(async(false)).resolves.toEqual({ status: 200, action: "action" });
+  return expect(async(false)).resolves.toEqual({
+    status: 200,
+    action: "action",
+  });
+});
+
+it("reject 사용", () => {
+  return expect(async(true)).rejects.toMatch("error");
 });
