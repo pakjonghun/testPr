@@ -49,3 +49,17 @@
 
 - runner : 실행후 결과 생성
 - assertion : 테스트 조건, 비교를 통한 테스트 로직
+
+## usage
+
+- 깃을 사용한다면 변경된 부분만 자동
+
+```
+    "test": "jest --watch",
+```
+
+- 싹다 테스트 한다
+
+```
+    "test": "jest --watchAll",
+```
