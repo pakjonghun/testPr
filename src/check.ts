@@ -3,7 +3,8 @@ export function check(
   onSuccess: Function,
   onFail: Function
 ) {
-  if (predicate()) {
+  const key = predicate();
+  if (key) {
     onSuccess("yes");
   } else {
     onFail("no");
