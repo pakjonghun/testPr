@@ -1,18 +1,38 @@
 import { ERROR_MSG } from "./constants";
+
+interface INode {
+  item: number | null;
+  next: INode | null;
+}
+
 export class Stack {
-  store = [] as any[];
+  head: INode | null = null;
 
   get size() {
-    return this.store.length;
+    let result = 0;
+    let next: INode | null = this.head;
+    while (next?.item) {
+      next = next.next;
+      result++;
+    }
+    return result;
   }
 
   push(item: any) {
-    this.store.push(item);
+    const node = { item, next: this.head };
+    this.head = node;
   }
 
   pop() {
-    if (this.store.length === 0) throw new Error(ERROR_MSG);
-    return this.store.pop();
+    if (this.head == null) throw new Error(ERROR_MSG);
+    const node = this.head;
+    this.head = this.head.next;
+    return node.item;
+  }
+
+  get peek() {
+    if (this.size === 0) throw new Error(ERROR_MSG);
+    return this.head?.item || null;
   }
 }
 
