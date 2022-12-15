@@ -15,3 +15,5 @@ export const video = {
     },
   },
 };
+
+export const videos = [video];

@@ -1,9 +1,10 @@
 import React from "react";
-import { MemoryRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Route, useLocation } from "react-router-dom";
 import { formatAgo } from "../../util/date";
 import VideoCard from "../VideoCard";
-import { video } from "./mockData";
+import { video } from "../../tests/videos";
 import userEvent from "@testing-library/user-event";
+import { withRoute } from "../../tests/utils";
 const { render, screen } = require("@testing-library/react");
 
 const {
@@ -13,21 +14,13 @@ const {
 
 describe("videoCard", () => {
   it("존재 해야한다.", () => {
-    render(
-      <MemoryRouter>
-        <VideoCard video={video} />
-      </MemoryRouter>
-    );
+    render(withRoute(<Route path='/' element={<VideoCard video={video} />} />));
     const img = screen.getByRole("img");
     expect(img).toBeInTheDocument();
   });
 
   it("속성이 데이터와 같아야 한다", () => {
-    render(
-      <MemoryRouter>
-        <VideoCard video={video} />
-      </MemoryRouter>
-    );
+    render(withRoute(<Route path='/' element={<VideoCard video={video} />} />));
 
     const img = screen.getByRole("img");
     expect(img.src).toBe(thumbnails.medium.url);
@@ -40,20 +33,19 @@ describe("videoCard", () => {
 
   it("카드 클릭시 디테일 페이지로 비디오 데이터와 함께 이동한다", () => {
     function LocationStatDisplay() {
-      console.log(JSON.stringify(useLocation().state));
       return <pre>{JSON.stringify(useLocation().state)}</pre>;
     }
 
     render(
-      <MemoryRouter initialEntries={["/"]}>
-        <Routes>
+      withRoute(
+        <>
           <Route path='/' element={<VideoCard video={video} />} />
           <Route
             path={`/videos/watch/${video.id}`}
             element={<LocationStatDisplay />}
           />
-        </Routes>
-      </MemoryRouter>
+        </>
+      )
     );
 
     const li = screen.getByRole("listitem");
