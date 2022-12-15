@@ -1,10 +1,11 @@
 import React from "react";
-import { Route, useLocation } from "react-router-dom";
+import { Link, Route, useLocation } from "react-router-dom";
 import { formatAgo } from "../../util/date";
 import VideoCard from "../VideoCard";
 import { video } from "../../tests/videos";
 import userEvent from "@testing-library/user-event";
 import { withRoute } from "../../tests/utils";
+import renderer from "react-test-renderer";
 const { render, screen } = require("@testing-library/react");
 
 const {
@@ -52,5 +53,47 @@ describe("videoCard", () => {
     userEvent.click(li);
 
     expect(screen.getByText(JSON.stringify({ video }))).toBeInTheDocument();
+  });
+
+  // it("타입이 리스트이면 스탕일이 다르다", () => {
+  //   render(
+  //     withRoute(
+  //       <Route path='/' element={<VideoCard video={video} type='list' />} />
+  //     )
+  //   );
+  //   const li = screen.getByRole("listitem");
+  //   expect(li).toHaveClass("flex gap-1 m-2");
+
+  //   const img = screen.getByRole("img");
+  //   expect(img).toHaveClass("w-60 mr-2");
+  // });
+
+  // it("타입이 없으면 스타일이 다르다", () => {
+  //   render(withRoute(<Route path='/' element={<VideoCard video={video} />} />));
+  //   const li = screen.getByRole("listitem");
+  //   expect(li).not.toHaveClass("flex gap-1 m-2");
+
+  //   const img = screen.getByRole("img");
+  //   expect(img).toHaveClass("w-full");
+  // });
+
+  it("list 타입을 넣을 경우 클래스를 확인한다", () => {
+    const tree = renderer
+      .create(
+        withRoute(
+          <Route path='/' element={<VideoCard video={video} type='list' />} />
+        )
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("list 타입을 안 넣을 경우 클래스를 확인한다", () => {
+    const tree = renderer
+      .create(
+        withRoute(<Route path='/' element={<VideoCard video={video} />} />)
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

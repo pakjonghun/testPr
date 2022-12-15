@@ -17,7 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --watch",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "coverage": "yarn test --coverage --watchAll"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +44,7 @@
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "eslint-config-react-app": "^7.0.1",
+    "react-test-renderer": "^18.2.0",
     "tailwindcss": "^3.2.1"
   }
 }

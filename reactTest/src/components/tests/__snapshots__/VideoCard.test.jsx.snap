@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`videoCard list 타입을 넣을 경우 클래스를 확인한다 1`] = `
+<li
+  className="flex gap-1 m-2"
+  onClick={[Function]}
+>
+  <img
+    alt="Survive 100 Days In Circle, Win $500,000"
+    className="w-60 mr-2"
+    src="https://i.ytimg.com/vi/gHzuabZUd6c/mqdefault.jpg"
+  />
+  <div>
+    <p
+      className="font-semibold my-2 line-clamp-2"
+    >
+      Survive 100 Days In Circle, Win $500,000
+    </p>
+    <p
+      className="text-sm opacity-80"
+    >
+      aa
+    </p>
+    <p
+      className="text-sm opacity-80"
+    >
+      2 months ago
+    </p>
+  </div>
+</li>
+`;
+
+exports[`videoCard list 타입을 안 넣을 경우 클래스를 확인한다 1`] = `
+<li
+  className=""
+  onClick={[Function]}
+>
+  <img
+    alt="Survive 100 Days In Circle, Win $500,000"
+    className="w-full"
+    src="https://i.ytimg.com/vi/gHzuabZUd6c/mqdefault.jpg"
+  />
+  <div>
+    <p
+      className="font-semibold my-2 line-clamp-2"
+    >
+      Survive 100 Days In Circle, Win $500,000
+    </p>
+    <p
+      className="text-sm opacity-80"
+    >
+      aa
+    </p>
+    <p
+      className="text-sm opacity-80"
+    >
+      2 months ago
+    </p>
+  </div>
+</li>
+`;
