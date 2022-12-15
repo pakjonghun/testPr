@@ -2,6 +2,7 @@ export default class UserService {
   userClient: any;
   isLogedIn: boolean;
   constructor(userClient: any) {
+    console.log(userClient);
     this.userClient = userClient;
     this.isLogedIn = false;
   }
