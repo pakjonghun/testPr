@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, useLocation } from "react-router-dom";
+import { Route, useLocation } from "react-router-dom";
 import { formatAgo } from "../../util/date";
 import VideoCard from "../VideoCard";
 import { video } from "../../tests/videos";
