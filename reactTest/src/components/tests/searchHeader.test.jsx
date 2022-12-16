@@ -1,5 +1,5 @@
 import React from "react";
-import { logRoles, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { Route } from "react-router-dom";
 import { withRoute } from "../../tests/utils";
 import SearchHeader from "../SearchHeader";
