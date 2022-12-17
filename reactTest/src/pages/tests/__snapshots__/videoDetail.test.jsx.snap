@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`videoDetail should display state data 1`] = `
+<DocumentFragment>
+  <section
+    class="flex flex-col lg:flex-row"
+  >
+    <article
+      class="basis-4/6"
+    >
+      <iframe
+        frameborder="0"
+        height="640"
+        id="player"
+        src="https://www.youtube.com/embed/1"
+        title="Survive 100 Days In Circle, Win $500,000"
+        type="text/html"
+        width="100%"
+      />
+      <div
+        class="p-8"
+      >
+        <h2
+          class="text-xl font-bold"
+        >
+          Survive 100 Days In Circle, Win $500,000
+        </h2>
+        <pre
+          class="whitespace-pre-wrap"
+        >
+          sign
+        </pre>
+      </div>
+    </article>
+    <section
+      class="basis-2/6"
+    />
+  </section>
+</DocumentFragment>
+`;
