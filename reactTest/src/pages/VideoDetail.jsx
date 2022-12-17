@@ -1,12 +1,14 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
-import ChannelInfo from '../components/ChannelInfo';
-import RelatedVideos from '../components/RelatedVideos';
+import React from "react";
+import { useLocation } from "react-router-dom";
+import ChannelInfo from "../components/ChannelInfo";
+import RelatedVideos from "../components/RelatedVideos";
 
 export default function VideoDetail() {
+  const a = useLocation();
+  console.log("a", a);
   const {
     state: { video },
-  } = useLocation();
+  } = a;
   const { title, channelId, channelTitle, description } = video.snippet;
   return (
     <section className='flex flex-col lg:flex-row'>

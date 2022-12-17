@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`video render correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 gap-y-4"
+  >
+    <li
+      class=""
+    >
+      <img
+        alt="Survive 100 Days In Circle, Win $500,000"
+        class="w-full"
+        src="https://i.ytimg.com/vi/gHzuabZUd6c/mqdefault.jpg"
+      />
+      <div>
+        <p
+          class="font-semibold my-2 line-clamp-2"
+        >
+          Survive 100 Days In Circle, Win $500,000
+        </p>
+        <p
+          class="text-sm opacity-80"
+        >
+          aa
+        </p>
+        <p
+          class="text-sm opacity-80"
+        >
+          2 months ago
+        </p>
+      </div>
+    </li>
+  </ul>
+</DocumentFragment>
+`;

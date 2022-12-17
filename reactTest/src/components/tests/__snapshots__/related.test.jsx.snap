@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`relatedVideo Test 로딩메세지가 떠야한다. 1`] = `
+<DocumentFragment>
+  <ul>
+    <li
+      class="flex gap-1 m-2"
+    >
+      <img
+        alt="Survive 100 Days In Circle, Win $500,000"
+        class="w-60 mr-2"
+        src="https://i.ytimg.com/vi/gHzuabZUd6c/mqdefault.jpg"
+      />
+      <div>
+        <p
+          class="font-semibold my-2 line-clamp-2"
+        >
+          Survive 100 Days In Circle, Win $500,000
+        </p>
+        <p
+          class="text-sm opacity-80"
+        >
+          aa
+        </p>
+        <p
+          class="text-sm opacity-80"
+        >
+          2 months ago
+        </p>
+      </div>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`relatedVideo Test 정확히 랜더링 되야 한다 1`] = `
+<DocumentFragment>
+  <p>
+    Loading...
+  </p>
+</DocumentFragment>
+`;
